@@ -10,14 +10,14 @@ interface ListagemPostsProps {
 }
 
 // Define o componente ListagemPosts como uma função React
-const ListagemPosts: React.FC<ListagemPostsProps> = ({ 
-  resources, 
-  items, 
-  handleCreate, 
-  handleUpdate, 
-  deleteItem 
+const ListagemPosts: React.FC<ListagemPostsProps> = ({
+  resources,
+  items,
+  handleCreate,
+  handleUpdate,
+  deleteItem
 }) => {
-  
+
   return (
     <div className="App">
       {/* Botão para criar um novo item do tipo atual */}
