@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato";
+}
+
+body {
+  background-color: rgb(245, 245, 245);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: white;
+  height: 190px; /* Ajuste a altura do header conforme necessário */
+  width: 100%;
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  z-index: 1000; 
+  box-shadow: 0px 4px 2px -2px gray;
+  display: flex; 
+  align-items: center; 
+  padding: 0 2%; 
+}
+
+header > .center {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  width: 100%; /* Garante que a largura da área centralize o conteúdo */
+}
+
+.logo-header {
+  flex: 0 1 auto; 
+}
+
+.logo-header img {
+  height: 190px; 
+  width: 190; 
+}
+
+nav {
+  flex: 1; 
+  display: flex; 
+  justify-content: center; 
+}
+
+nav ul {
+  display: flex;
+  align-items: center; 
+  margin: 0;
+  padding: 0;
+  list-style: none; 
+}
+
+nav li {
+  margin: 0 20px; 
+}
+
+nav a {
+  text-decoration: none; 
+  color: black; 
+  font-size: 16px;
+}
