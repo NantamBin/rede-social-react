@@ -84,21 +84,22 @@ const CrudLogicResources = (initialResource: string) => {
     };
 
     const updateItem = (id: number, updatedItem: any) => {
+        console.log(id, updatedItem)
         if (resources === 'posts') {
             setPosts((prevItems) => {
-                const updatedItems = prevItems.map((item) => (item.id === id ? updatedItem : item));
+                const updatedItems = prevItems.map((item) => (item.id == id ? updatedItem : item));
                 localStorage.setItem('posts', JSON.stringify(updatedItems));
                 return updatedItems;
             });
         } else if (resources === 'comments') {
             setComments((prevItems) => {
-                const updatedItems = prevItems.map((item) => (item.id === id ? updatedItem : item));
+                const updatedItems = prevItems.map((item) => (item.id == id ? updatedItem : item));
                 localStorage.setItem('comments', JSON.stringify(updatedItems));
                 return updatedItems;
             });
         } else if (resources === 'users') {
             setUsers((prevItems) => {
-                const updatedItems = prevItems.map((item) => (item.id === id ? updatedItem : item));
+                const updatedItems = prevItems.map((item) => (item.id == id ? updatedItem : item));
                 localStorage.setItem('users', JSON.stringify(updatedItems));
                 return updatedItems;
             });
@@ -130,9 +131,11 @@ const CrudLogicResources = (initialResource: string) => {
     const handleCreate = () => {
         setModalAction("create");
         if(resources === "posts"){
-            setCurrentItem({ title: '', body: '' });
-        } else if(resources === "users"){
-            setCurrentItem({userId:'', id:'', title: '', body: '' });
+            setCurrentItem({ id: 0, userId: 0, title: '', body: '' });
+        }else if(resources === "comments"){
+            setCurrentItem({postId: 0, id: 0, name: '', email:'', body: '' });
+        } else {
+            setCurrentItem({id: 0, name:'', username: '', email: '', address: {street: '', suite:'', city:'', zipcode:0}, phone: 0, website: '', company: {name:'', catchPhrase: '', obs:''} });
         }
         setModalIsOpen(true);
     };
@@ -143,13 +146,22 @@ const CrudLogicResources = (initialResource: string) => {
         setModalIsOpen(true);
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = (oldId: number) => {
+        console.log(oldId)
         if (modalAction === "create") {
             createItem(currentItem);
         } else if (modalAction === "update") {
-            updateItem(currentItem.id, currentItem);
+            updateItem(oldId, currentItem);
         }
         setModalIsOpen(false);
+    };
+
+    const createComment = (comment: any) => {
+        setComments((prevItems) => {
+            const updatedItems = [...prevItems, comment];
+            localStorage.setItem('comments', JSON.stringify(updatedItems));
+            return updatedItems;
+        });
     };
 
     const currentItems = resources === 'posts' ? posts :
@@ -171,7 +183,8 @@ const CrudLogicResources = (initialResource: string) => {
         modalAction,
         posts,
         comments,
-        users
+        users,
+        createComment
     };
 };
 

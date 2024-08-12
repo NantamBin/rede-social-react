@@ -2,20 +2,26 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useLocation } from 'react-router-dom';
 import { UserInterface } from '../UserInterface.ts';
-import Comment from '../components/CommentsSection';
+import CommentsSection from '../components/CommentsSection';
+import CommentSubmit from '../components/CommentSubmit';
+import { useState } from 'react';
+
 
 export default function PostView() {
     const location = useLocation();
-    const { title, body, comentariosPost, usuarioPost } = location.state as { title: string; body: string, comentariosPost: any[], usuarioPost: UserInterface };
+    const { id, title, body, comentariosPost, usuarioPost } = location.state as { id: number; title: string; body: string, comentariosPost: any[], usuarioPost: UserInterface };
+
+    const [comments, setComments] = useState(comentariosPost);
+
+    const handleNewComment = (newComment: any) => {
+        setComments(prevComments => [...prevComments, newComment]);
+    };
 
     return (
         <>
-
             <Header />
             <div className="max-w-screen-lg mx-12">
-
                 <main className="mt-10">
-
                     <div className="mb-4 md:mb-0 w-full mx-auto relative">
                         <div className="px-4 lg:px-0">
                             <h2 className="text-4xl font-semibold text-gray-800 leading-tight">
@@ -25,16 +31,14 @@ export default function PostView() {
                                 href="#"
                                 className="py-2 text-green-700 inline-flex items-center justify-center mb-2"
                             >
-                                Cryptocurrency
+                                Postagem
                             </a>
                         </div>
                     </div>
 
                     <div className="flex flex-col lg:flex-row lg:space-x-12">
-
                         <div className="px-4 lg:px-0 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
                             <p className="pb-6">{body}</p>
-
                         </div>
 
                         <div className="flex justify-end w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
@@ -53,15 +57,23 @@ export default function PostView() {
                             </div>
                         </div>
                     </div>
-
                 </main>
+                <CommentSubmit 
+                    postId={id}
+                    onNewComment={handleNewComment} // Pass the callback
+                />
                 <div className="Comment-Section">
-                    {comentariosPost.map(comment => (
-                        <Comment key={comment.id} name={comment.name} body={comment.body} email={comment.email} />
+                    {comments.map(comment => (
+                        <CommentsSection 
+                            key={comment.id} 
+                            name={comment.name} 
+                            body={comment.body} 
+                            email={comment.email} 
+                        />
                     ))}
                 </div>
                 <Footer />
             </div>
         </>
-    )
+    );
 }

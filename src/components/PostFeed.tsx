@@ -14,7 +14,7 @@ const PostFeed: React.FC = () => {
   return (
     <div className="post-feed">
       {posts.map(post => (
-        <Post key={post.id} id={post.id} userId={post.userId} title={post.title} body={post.body} comments={comments} users={users} />
+        <Post key={post.id} id={post.id} userId={post.userId} title={post.title} body={post.body} comments={comments} users={users}/>
       ))}
     </div>
   );

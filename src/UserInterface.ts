@@ -7,13 +7,13 @@ export interface UserInterface {
       street: string;
       suite: string;
       city: string;
-      zipcode: string;
+      zipcode: number;
       geo: {
         lat: string;
         lng: string;
       };
     };
-    phone: string;
+    phone: number;
     website: string;
     company: {
       name: string;
