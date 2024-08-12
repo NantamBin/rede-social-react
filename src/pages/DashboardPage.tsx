@@ -34,7 +34,8 @@ const DashboardPage: React.FC = () => {
                     handleUpdate={handleUpdate}
                     deleteItem={deleteItem}
                 />
-                <CrudModal
+                {modalIsOpen && (
+                    <CrudModal
                     isOpen={modalIsOpen}
                     onRequestClose={() => setModalIsOpen(false)}
                     action={modalAction}
@@ -43,6 +44,7 @@ const DashboardPage: React.FC = () => {
                     onSubmit={handleSubmit}
                     resourceName={resources.slice(0, -1)}
                 />
+                )}
             </div>
         </>
     );

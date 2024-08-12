@@ -32,7 +32,10 @@ const CrudLogicResources = (initialResource: string) => {
         } else {
             fetchUsers();
         }
-    }, []);
+        
+        setModalIsOpen(false);
+
+    }, [resources]);
 
     const fetchPosts = () => {
         fetch(`https://jsonplaceholder.typicode.com/posts`)

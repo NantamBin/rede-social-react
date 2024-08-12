@@ -5,6 +5,7 @@ import { UserInterface } from '../UserInterface.ts';
 import CommentsSection from '../components/CommentsSection';
 import CommentSubmit from '../components/CommentSubmit';
 import { useState } from 'react';
+import NotFound from '../pages/NotFound';
 
 
 export default function PostView() {
@@ -17,8 +18,11 @@ export default function PostView() {
         setComments(prevComments => [...prevComments, newComment]);
     };
 
+    const isValid = id !== undefined && title !== undefined && body !== undefined && comentariosPost !== undefined && usuarioPost !== undefined;
+
     return (
         <>
+        {!isValid ? <NotFound /> : (<>
             <Header />
             <div className="max-w-screen-lg mx-12">
                 <main className="mt-10">
@@ -44,12 +48,13 @@ export default function PostView() {
                         <div className="flex justify-end w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
                             <div className="p-4 border-t border-b md:border md:rounded">
                                 <div className="flex py-2">
-                                    <img src="https://randomuser.me/api/portraits/men/97.jpg"
+                                    <img src={`https://randomuser.me/api/portraits/men/${usuarioPost.id}.jpg`}
                                         className="h-10 w-10 rounded-full mr-2 object-cover" />
                                     <div>
                                         <p className="font-semibold text-gray-700 text-sm"> {usuarioPost.name} </p>
                                         <p className="font-semibold text-gray-600 text-xs"> username: {usuarioPost.username} </p>
                                     </div>
+                                    
                                 </div>
                                 <p className="text-gray-700 py-3">
                                     email: {usuarioPost.email}
@@ -74,6 +79,8 @@ export default function PostView() {
                 </div>
                 <Footer />
             </div>
+            </>)
+        }
         </>
     );
 }

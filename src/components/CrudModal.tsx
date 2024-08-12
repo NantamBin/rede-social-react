@@ -58,7 +58,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
               onChange={(e) => {
                 setItem({ ...item, id: e.target.value }); 
               }}
-              className="mt-1 block w-full rounded-md border-white-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-white-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-4">
@@ -67,7 +67,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
               type="number"
               value={item?.userId || 0}
               onChange={(e) => setItem({ ...item, userId: e.target.value })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-4">
@@ -76,7 +76,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
               type="text"
               value={item?.title || ''}
               onChange={(e) => setItem({ ...item, title: e.target.value })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-6">
@@ -84,7 +84,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
             <textarea
               value={item?.body || ''}
               onChange={(e) => setItem({ ...item, body: e.target.value })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
             </>
@@ -97,7 +97,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
               type="number"
               value={item?.id || 0}
               onChange={(e) => setItem({ ...item, id: e.target.value })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-4">
@@ -106,7 +106,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
               type="number"
               value={item?.postId || 0}
               onChange={(e) => setItem({ ...item, postId: e.target.value })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-4">
@@ -115,7 +115,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
               type="text"
               value={item?.name || ''}
               onChange={(e) => setItem({ ...item, name: e.target.value })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-6">
@@ -123,7 +123,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
             <textarea
               value={item?.email || ''}
               onChange={(e) => setItem({ ...item, email: e.target.value })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-6">
@@ -131,7 +131,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
             <textarea
               value={item?.body || ''}
               onChange={(e) => setItem({ ...item, body: e.target.value })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           </>
@@ -144,7 +144,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
               type="number"
               value={item?.id || ''}
               onChange={(e) => setItem({ ...item, id: e.target.value })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-4">
@@ -153,7 +153,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
               type="text"
               value={item?.name || ''}
               onChange={(e) => setItem({ ...item, name: e.target.value })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-4">
@@ -162,7 +162,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
               type="text"
               value={item?.username || ''}
               onChange={(e) => setItem({ ...item, username: e.target.value })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-6">
@@ -170,7 +170,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
             <textarea
               value={item?.email || ''}
               onChange={(e) => setItem({ ...item, email: e.target.value })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <label className="block text-sm font-medium text-gray-700"><b>Endereço</b></label>
@@ -183,7 +183,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
                   ...item.address, 
                   street: e.target.value 
                 } })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-6">
@@ -195,7 +195,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
                   ...item.address, 
                   suite: e.target.value 
                 } })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-6">
@@ -207,7 +207,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
                   ...item.address, 
                   city: e.target.value 
                 } })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-6">
@@ -219,7 +219,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
                   ...item.address, 
                   zipcode: e.target.value 
                 } })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-6">
@@ -227,7 +227,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
             <textarea
               value={item?.phone || 0}
               onChange={(e) => setItem({ ...item, phone: e.target.value })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-6">
@@ -235,7 +235,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
             <textarea
               value={item?.website || ''}
               onChange={(e) => setItem({ ...item, website: e.target.value })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
 
@@ -249,7 +249,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
                   ...item.company, 
                   name: e.target.value 
                 } })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-6">
@@ -261,7 +261,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
                   ...item.company, 
                   catchPhrase: e.target.value 
                 }  })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
           <div className="mb-6">
@@ -273,7 +273,7 @@ const CrudModal: React.FC<CrudModalProps> = ({
                   ...item.company, 
                   bs: e.target.value 
                 } })}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-white p-2"
             />
           </div>
 

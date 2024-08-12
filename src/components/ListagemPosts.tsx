@@ -60,7 +60,7 @@ const ListagemPosts: React.FC<ListagemPostsProps> = ({
 
                         <li className="py-2">
                           <div className="flex items-center space-x-4">
-                            <span className="text-md font-medium"><b>Corpo do Texto:</b> {item.title} </span>
+                            <span className="text-md font-medium"><b>Corpo do Texto:</b> {item.body} </span>
                           </div>
                         </li>
                       </ul>
