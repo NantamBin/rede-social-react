@@ -1,30 +1,59 @@
-# React + TypeScript + Vite
+# Rede Social React 🌐
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um front-end para uma rede social, construído com **React**, **TypeScript** e **Vite**. O projeto conta com sistema de rotas, gerenciamento de posts e um dashboard administrativo para operações de CRUD.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Feed de Notícias (Home)**: Visualização geral de postagens.
+- **Dashboard Administrativo**: Gerenciamento centralizado de recursos (Posts, Usuários, etc.).
+- **Sistema de CRUD**: Criação, leitura, atualização e exclusão de itens através de modais.
+- **Visualização Individual**: Rota dinâmica para visualizar detalhes específicos de um post (`/post/:id`).
+- **Layout**: Interface construída com **Tailwind CSS**.
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Core**: [React 18](https://reactjs.org/) & [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Roteamento**: [React Router DOM v6](https://reactrouter.com/)
+- **Estilização**: [Tailwind CSS](https://tailwindcss.com/)
+- **Componentes de UI**: [React Modal](https://github.com/reactjs/react-modal)
+- **Linter**: [ESLint](https://eslint.org/)
 
-- Configure the top-level `parserOptions` property like this:
+## 📂 Estrutura de Rotas
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+| Rota | Componente | Descrição |
+| :--- | :--- | :--- |
+| `/` | `Home` | Feed principal da rede social. |
+| `/dashboard` | `DashboardPage` | Área administrativa com lógica de CRUD. |
+| `/post/:id` | `PostView` | Visualização detalhada de um post específico. |
+
+## 🔧 Instalação e Execução
+
+1. **Clone o repositório:**
+```bash
+   git clone [https://github.com/jotor-dev/rede-social-react.git](https://github.com/jotor-dev/rede-social-react.git)
+   cd rede-social-react
 ```
+2. **Instale as dependências:**
+```bash
+npm install
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+```
+3. **Inicie o servidor de desenvolvimento:**
+```bash
+npm run dev
+
+```
+4. **Acesse no navegador:**
+O Vite geralmente disponibiliza o projeto em `http://localhost:5173`.
+
+## 📦 Scripts Disponíveis
+
+* `npm run dev`: Inicia o servidor local de desenvolvimento.
+* `npm run build`: Gera a versão otimizada para produção na pasta `dist`.
+* `npm run lint`: Executa a verificação do ESLint para manter a qualidade do código.
+* `npm run preview`: Visualiza localmente o build de produção.
+
+## 📐 Organização do Código
+
+O projeto utiliza o hook customizado `CrudLogicResources` para separar a lógica de negócio da interface do usuário no Dashboard, permitindo que a aplicação seja facilmente escalável para outros tipos de recursos além de "posts".
