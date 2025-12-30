@@ -31,7 +31,7 @@ Um front-end para uma rede social, construído com **React**, **TypeScript** e *
 
 1. **Clone o repositório:**
 ```bash
-   git clone [https://github.com/jotor-dev/rede-social-react.git](https://github.com/jotor-dev/rede-social-react.git)
+   git clone https://github.com/jotor-dev/rede-social-react.git
    cd rede-social-react
 ```
 2. **Instale as dependências:**
